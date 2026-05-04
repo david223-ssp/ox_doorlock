@@ -349,10 +349,10 @@ CreateThread(function()
 				if Config.DrawTextUIType == 'ox' then
 					lib.showTextUI(ClosestDoor.state == 0 and lockDoor or unlockDoor)
 				elseif Config.DrawTextUIType == 'sandbox' or Config.DrawTextUIType == 'pulsar' then
-					exports['pulsar-hud']:ActionShow(
-						"door_action",
-						ClosestDoor.state == 0 and lockDoor or unlockDoor
-					)
+					--exports['pulsar-hud']:ActionShow(
+					--	"door_action",
+					--	ClosestDoor.state == 0 and lockDoor or unlockDoor
+					--)
 				end
 				showUI = ClosestDoor.state
 			end
