@@ -344,7 +344,7 @@ exports('setDoorState', setDoorState)
 exports('IsLocked', function(doorId)
 	if type(doorId) == 'string' then
 		for _, door in pairs(doors) do
-			if door.name == doorId then
+			if door.name == doorId or door._originalId == doorId then
 				return door.state == 1
 			end
 		end
@@ -360,7 +360,7 @@ end)
 exports('SetLock', function(doorId, state)
 	if type(doorId) == 'string' then
 		for id, door in pairs(doors) do
-			if door.name == doorId then
+			if door.name == doorId or door._originalId == doorId then
 				return setDoorState(id, state and 1 or 0)
 			end
 		end
@@ -373,7 +373,7 @@ end)
 exports('SetUnlock', function(doorId)
 	if type(doorId) == 'string' then
 		for id, door in pairs(doors) do
-			if door.name == doorId then
+			if door.name == doorId or door._originalId == doorId then
 				return setDoorState(id, 0)
 			end
 		end
@@ -386,7 +386,7 @@ end)
 exports('SetForcedOpen', function(doorId)
 	if type(doorId) == 'string' then
 		for id, door in pairs(doors) do
-			if door.name == doorId then
+			if door.name == doorId or door._originalId == doorId then
 				return setDoorState(id, 0)
 			end
 		end

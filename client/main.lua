@@ -375,3 +375,13 @@ end)
 
 exports('useClosestDoor', useClosestDoor)
 exports('getClosestDoor', function() return ClosestDoor end)
+
+exports('IsLocked', function(doorId)
+    if not doors then return true end
+    for _, door in pairs(doors) do
+        if door.name == doorId or door._originalId == doorId then
+            return door.state == 1
+        end
+    end
+    return true
+end)
