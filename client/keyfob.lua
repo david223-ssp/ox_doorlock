@@ -2,14 +2,14 @@ local keyfobRange = 10.0
 
 RegisterNetEvent('ox_doorlock:useKeyfobClient', function(itemName, success, doorId, doorState)
     if not success then
-        exports['sandbox-sounds']:UISoundsPlayFrontEnd(-1, "OOB_Cancel", "GTAO_FM_Events_Soundset")
+        exports['pulsar-sounds']:UISoundsPlayFrontEnd(-1, "OOB_Cancel", "GTAO_FM_Events_Soundset")
         return
     end
 
     if doorState == 1 then -- Locked
-        exports['sandbox-sounds']:UISoundsPlayFrontEnd(-1, "OOB_Cancel", "GTAO_FM_Events_Soundset")
+        exports['pulsar-sounds']:UISoundsPlayFrontEnd(-1, "OOB_Cancel", "GTAO_FM_Events_Soundset")
     else                   -- Unlocked
-        exports['sandbox-sounds']:UISoundsPlayFrontEnd(-1, "Bomb_Disarmed", "GTAO_Speed_Convoy_Soundset")
+        exports['pulsar-sounds']:UISoundsPlayFrontEnd(-1, "Bomb_Disarmed", "GTAO_Speed_Convoy_Soundset")
     end
 
     local playerPed = PlayerPedId()
